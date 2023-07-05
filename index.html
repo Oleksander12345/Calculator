@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../Calculator/style/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculate">
+        <h1>Calculator</h1>
+        <div class="calculate__container">
+            <div class="input">
+                <input type="text" value="" name="number1">
+                <input type="text" value="" name="number2">
+            </div>
+            <div class="sign">
+                <label>
+                    <div class="sum">+</div>
+                    <input class="operation" type="radio" value="+" name="operation">
+                </label>
+                <label>
+                    <div class="min">-</div>
+                <input class="operation" type="radio" value="-" name="operation" >
+
+                </label>
+                <label>
+                    <div class="dil">/</div>
+                <input class="operation" type="radio" value="/" name="operation">
+
+                </label>
+                <label>
+                    <div class="mno">*</div>
+                <input class="operation" type="radio" value="*" name="operation"> 
+
+                </label>
+            </div>
+            <div class="result__container">
+              <button class="result" > Result</button>  
+            </div>
+                
+        
+        
+        
+            <div class="res" style="outline:blue solid 2px;">0</div>
+        </div>
+        
+    </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+  <script>
+
+
+var res = 0;
+
+$(".result").on('click', function(){
+
+    var num1 = $('input[name="number1"]').val();
+
+    var num2 = $('input[name="number2"]').val();
+    var operation = $('input[name="operation"]:checked').val();
+
+    if(operation == "+") {
+        var res = parseInt(num1) + parseInt(num2);
+    } else if(operation == "-") {
+        var res = parseInt(num1) - parseInt(num2);
+    } else if(operation == "/") {
+        var res = parseInt(num1) / parseInt(num2);
+    } else if(operation == "*") {
+        var res = parseInt(num1) * parseInt(num2);
+    }
+
+    $('.res').html(res);
+
+});
+
+  </script>
+
+</body>
+</html>
